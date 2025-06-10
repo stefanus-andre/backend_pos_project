@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"project_backend/Database"
+	"project_backend/Routes"
 )
 
 func main() {
@@ -18,5 +19,7 @@ func main() {
 		return c.SendString("Fiber + PostgreSQL + Viper works!")
 	})
 
-	app.Listen(":3000")
+	Routes.AuthRoutes(app)
+
+	app.Listen(":8000")
 }

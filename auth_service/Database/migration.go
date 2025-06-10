@@ -22,12 +22,12 @@ func Migrate() {
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		log.Fatal("failed to connect database", err)
+		log.Fatal("failed to connect Database", err)
 	}
 
 	err = db.AutoMigrate(&Models.User{})
 	if err != nil {
-		log.Fatal("failed to migrate database", err)
+		log.Fatal("failed to migrate Database", err)
 	}
 
 	GormDB = db
